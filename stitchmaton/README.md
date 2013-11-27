@@ -7,17 +7,25 @@ series of *n* photographs and excises successive *n*ths. These strips are then
 crop.sh
 -------
 Usage:
+
 	crop.sh IMGS
+
 In the examples, it was run as:
+
 	crop.sh imgin/*
+
 Producing the excised strips in the imgout directory.
 
 join.sh
 -------
 Usage:
+
 	join.sh IMGS
+
 In the examples, it was rus as:
+
 	join.sh imgout/*
+
 Producing the file stitched.jpg in the working directory.
 
 
