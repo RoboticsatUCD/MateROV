@@ -18,6 +18,23 @@ Its one required argument is the joystick device file, normally located in `/dev
 It simply outputs commands on `stdout` based on a linear map of the left joystick's two axes.
 Simply use gcc to compile on any Linux system.
 
+Known issue: Transmission saturates after a few seconds and the control is disconnected.
+I'm not sure why this occurs.
+
+src/jscommander2.c
+------------------
+This is version of jscommander that uses the serial library to directly write to the serial device rather than requiring the user to configure it and handle the piping in the shell.
+
+This implementation does not have the transmission saturation problem as the other does, probably because of the more strict setup of the serial device capabilities in the serial library.
+However, the main switch condition that populates the state arrays for the joystick device needed to be changed to ignore `JS_EVENT_INIT`.
+Otherwise, the when the automatic starting series of the joystick ends and input halts before analog mode is engaged, the program crashes on a malloc() error:
+
+	jscommander2: malloc.c:2369: sysmalloc: Assertion `(old_top == (((mbinptr) (((char *) &((av)->bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) && old_size == 0) || ((unsigned long) (old_size) >= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 *(sizeof(size_t))) - 1)) & ~((2 *(sizeof(size_t))) - 1))) && ((old_top)->size & 0x1) && ((unsigned long) old_end & pagemask) == 0)' failed.
+	Aborted
+
+Now, there are two `Resource temporarily unavailable messages` that accompany a serial write error, but the code works fine.
+The code writes all commands to the dumpfile `dump` in binary mode, but no output is seen during the pause.
+
 src/connect.sh
 --------------
 This file lays out the commands necessary to successfully control the servos once the handler is uploaded to the Arduino.
