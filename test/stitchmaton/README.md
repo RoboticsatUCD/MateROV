@@ -22,7 +22,7 @@ Usage:
 
 	join.sh IMGS
 
-In the examples, it was rus as:
+In the examples, it was run as:
 
 	join.sh imgout/*
 

@@ -1,6 +1,6 @@
 MATE ROV Code
 =============
-Each code module will gets its own subdirectory.
+Each code module will get its own subdirectory.
 
 doc/
 ----

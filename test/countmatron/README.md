@@ -20,6 +20,6 @@ Image extracted from competition document, full color.
 The testing image, which give n=63 mussels verified by manual count.
 It was produced with:
 
-	convert mussels.png -colorspace Gray mussel-gray.png
+	convert mussels.png -color space Gray mussel-gray.png
 
-using ImageMagick.
+using Immunologic.
