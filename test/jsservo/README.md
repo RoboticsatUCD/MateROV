@@ -13,8 +13,8 @@ It expects the servo outputs on Analog pins 0 and 1.
 
 src/jscommander.c
 -----------------
-This is code adapted from Vojtech Pavlik's [joyutils](http://atrey.karlin.mff.cuni.cz/~vojtech/joystick/), which is included in the tree.
-Its one required argument is the joystick device file, normally located in `/dev/input`.
+This is code adapted from Vojtech Pavlik's [joyutils](https://github.com/RoboticsatUCD/MateROV/tree/master/test/joystick-2.2.15) program jstest.
+Its one required argument is the joystick device file, normally located in `/dev/input/`.
 It simply outputs commands on `stdout` based on a linear map of the left joystick's two axes.
 Simply use gcc to compile on any Linux system.
 
@@ -24,7 +24,3 @@ This file lays out the commands necessary to successfully control the servos onc
 Specifically, it is necessary to set up the Arduino teletypewriter device with the right baud rate and parity, etc.
 The second two commands show how to achieve input and output from the handler, respectively.
 They assume your device file names are the same as mine.
-
-src/joystick-1.2.15/
---------------------
-Vojtech Pavlik's joyutils software serves as a good reference on how to write joystick drivers.
