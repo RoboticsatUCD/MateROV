@@ -9,4 +9,6 @@ Reading transmissions can be done simply with:
 
 	tail -f /dev/ttyACM0
 
+TTY interaction can be achieved with `picocom`.
+
 XXX: More documentation necessary!
