@@ -1,5 +1,5 @@
-UC Davis Robotics Club MATE ROV Code
-====================================
+MATE ROV Code
+=============
 Each code module will gets its own subdirectory.
 
 doc/
