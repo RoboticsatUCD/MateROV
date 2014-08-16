@@ -8,8 +8,6 @@
  * > Copyright (c) 1996-1999 Vojtech Pavlik
  *
  * > Sponsored by SuSE
- *
- * whose source is included in this directory.
  */
 
 #include <sys/ioctl.h>
