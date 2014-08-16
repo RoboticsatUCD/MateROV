@@ -46,6 +46,8 @@ void loop()
 				yservo.write(v);
 				v = 0;
 				break;
+			case '\n':
+				break;
 			default:
 				Serial.println("Unknown command received!");
 				break;
