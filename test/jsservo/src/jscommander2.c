@@ -32,6 +32,7 @@ int main(int argc, char **argv)
 	const int buf_max = 256;
 	int timeout = 5000;
 	int sp = -1;
+	FILE *df = fopen("dump", "wb");
 	int rc;
 	int baudrate = 19200; // Baud rate used on Arduino event handler.
 	char serialport[buf_max];
@@ -106,7 +107,7 @@ int main(int argc, char **argv)
 			exit (1);
 		}
 
-		switch(js.type & ~JS_EVENT_INIT) {
+		switch(js.type) {// & ~JS_EVENT_INIT) {
 			case JS_EVENT_BUTTON:
 				button[js.number] = js.value;
 				break;
@@ -115,11 +116,10 @@ int main(int argc, char **argv)
 				break;
 		}
 
-		printf("\r");
-
 		/* Use axes 0 and 1 to control servos. */
 		if (axes) {
 			sprintf(buf, "%dx%dy", axis[0]/364+90, axis[1]/364+90);
+			fprintf(df, "%s\n", buf);
 			rc = serialport_write(sp, buf);
 			if (rc == -1) perror("jscommander: Error writing to serial device");
 		}
@@ -130,6 +130,7 @@ int main(int argc, char **argv)
 		//		printf("%2d:%s ", i, button[i] ? "on " : "off");
 		//}
 
+		fflush(df);
 		fflush(stdout);
 	}
 }
