@@ -16,6 +16,7 @@ src/jscommander.c
 This is code adapted from Vojtech Pavlik's [joyutils](http://atrey.karlin.mff.cuni.cz/~vojtech/joystick/), which is included in the tree.
 Its one required argument is the joystick device file, normally located in `/dev/input`.
 It simply outputs commands on `stdout` based on a linear map of the left joystick's two axes.
+Simply use gcc to compile on any Linux system.
 
 src/connect.sh
 --------------
