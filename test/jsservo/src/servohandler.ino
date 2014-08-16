@@ -19,11 +19,11 @@ int ypos = 0;
 void setup()
 {
 	/* Select which analog pins we will be using. */
-	xservo.attach(14);				// Analog Pin0.
-	yservo.attach(15);				// Analog Pin1.
+	xservo.attach(14);               // Analog Pin0.
+	yservo.attach(15);               // Analog Pin1.
 
 	/* Setup communication. */
-	Serial.begin(19200);			// A high baud rate.
+	Serial.begin(19200);             // A high baud rate.
 	Serial.println("I'm here!");
 }
 
@@ -35,14 +35,14 @@ void loop()
 
 		/* Command handler. */
 		switch (ch) {
-			case '0' ... '9':			// Numeric payload string.
-				v = v*10 + ch - '0';	// Convert to integer.
+			case '0' ... '9':        // Numeric payload string.
+				v = v*10 + ch - '0'; // Convert to integer.
 				break;
-			case 'x':					// Servo selection: x.
+			case 'x':                // Servo selection: x.
 				xservo.write(v);
 				v = 0;
 				break;
-			case 'y':					// Servo selection: y.
+			case 'y':                // Servo selection: y.
 				yservo.write(v);
 				v = 0;
 				break;
