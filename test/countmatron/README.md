@@ -4,7 +4,7 @@ Countmatron, Automatic Object Counting
 thresholding.py
 ---------------
 Basic proof-of-concept using Otsu thresholding.
-Requires grayscale input as input.
+Requires grayscale input.
 The image is first blurred to remove high frequency data.
 
 Usage:
@@ -21,3 +21,5 @@ The testing image, which give n=63 mussels verified by manual count.
 It was produced with:
 
 	convert mussels.png -colorspace Gray mussel-gray.png
+
+using ImageMagick.
