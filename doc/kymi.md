@@ -24,7 +24,16 @@ Window Manager
 The installed window manager is [`spectrwm`](https://github.com/conformal/spectrwm/wiki), efficient and tiling.
 It may be alien to users of stacking window managers: refer to the man page and the configuration in `~/.spectrwm*` for in depth information.
 
+Copying text is achieved simply by selecting it.
+In `urxvt`, it can also be achieved via the keyboard using A+y, which implements vim-like yanking.
+To only offer URLs for copying, use A+u.
+Note that the general yank register in vim is setup for use with X.
+
+Pasting is performed by S+Insert.
+
 ### Basic Usage:
+The M in the keybindings refers to the Super key.
+
 Opening windows:
 * Open run prompt: M+z
 * Open new terminal emulator: M+x
