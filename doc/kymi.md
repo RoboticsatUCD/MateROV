@@ -4,6 +4,8 @@ The command laptop, kymi, runs comprehensive setup of Arch Linux.
 While it has a desktop installed, its usage paradigm may be unfamiliar to those unaccustomed to command line interfaces.
 If you need a quick introduction or refresher, read the tutorials [here](http://linuxcommand.org/).
 
+Be sure to check out the aliases defined in `~/.bash_aliases` and the scripts in `~/bin` for usability improvements.
+
 Most commonly used development, mathematics, and networking software are installed.
 To see a [mostly] accurate list of what is installed, see the package list [here](https://github.com/egan/dotfiles/blob/master/pacman.txt).
 Of special note is the fact that Python 3 is the default implementation of the Python language and libraries available.
