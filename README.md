@@ -1,5 +1,5 @@
-UC Davis MateROV 2014 Competition Code
-======================================
+UC Davis Robotics Club MATE ROV Code
+====================================
 
 countmatron
 -----------
