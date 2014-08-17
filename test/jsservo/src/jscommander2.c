@@ -47,23 +47,24 @@ int main(int argc, char **argv)
 
 
 	/* Argument handling. */
-	if (argc != 2 || !strcmp("--help", argv[1])) {
-		puts("Usage: jscommander <device>");
+	if (argc != 3 || !strcmp("--help", argv[1])) {
+		puts("Usage: jscommander <jsdevice> <serialdevice>");
 		exit(1);
 	}
-	if ((fd = open(argv[argc - 1], O_RDONLY)) < 0) {
+	/* Joystick setup. */
+	if ((fd = open(argv[1], O_RDONLY)) < 0) {
 		perror("jscommander: Unable to open joystick device");
 		exit(1);
 	}
-
 	/* Serial device setup. */
-	/* XXX: Add argument to select serial device */
-	strcpy(serialport, "/dev/ttyACM0");
-	sp = serialport_init(serialport, baudrate);
-	if (fd==-1) perror("jscommander: Could not open serial device");
+	strcpy(serialport, argv[2]);
+	if ((sp = serialport_init(serialport, baudrate)) < 0) {
+		perror("jscommander: Unable to open serial device");
+		exit(1);
+	}
 	serialport_flush(sp);
 
-	/* Joystick setup. */
+	/* Joystick information. */
 	ioctl(fd, JSIOCGVERSION, &version);
 	ioctl(fd, JSIOCGAXES, &axes);
 	ioctl(fd, JSIOCGBUTTONS, &buttons);
