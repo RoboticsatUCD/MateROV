@@ -5,14 +5,14 @@ The Arduino is an event handler for serial communication from a PC, which runs t
 
 This source tree was created using [ino](http://inotool.org/).
 
-src/servohandler.ino
---------------------
+servohandler/src/servohandler.ino
+---------------------------------
 This code handles the servo interface and interprets the commands from the PC.
 It can be simply built and uploaded to the Arduino.
 It expects the servo outputs on Analog pins 0 and 1.
 
-src/jscommander.c
------------------
+jscommander.c
+-------------
 This is code adapted from Vojtech Pavlik's [joyutils](https://github.com/RoboticsatUCD/MateROV/tree/master/test/joystick-2.2.15) program jstest.
 Its one required argument is the joystick device file, normally located in `/dev/input/`.
 It simply outputs commands on `stdout` based on a linear map of the left joystick's two axes.
@@ -21,8 +21,8 @@ Simply use gcc to compile on any Linux system.
 Known issue: Transmission saturates after a few seconds and the control is disconnected.
 I'm not sure why this occurs.
 
-src/jscommander2.c
-------------------
+jscommander2.c
+--------------
 This is version of jscommander that uses the serial library to directly write to the serial device rather than requiring the user to configure it and handle the piping in the shell.
 
 This implementation does not have the transmission saturation problem as the other does, probably because of the more strict setup of the serial device capabilities in the serial library.
