@@ -22,4 +22,4 @@ It was produced with:
 
 	convert mussels.png -color space Gray mussel-gray.png
 
-using Immunologic.
+using ImageMagick.
