@@ -28,4 +28,4 @@ It is also advisable for production code to include the GPL copying permission s
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 For non-code files like images or documents, the copyright defaults to you and you may license it as you please, e.g. Creative Commons.
-Note that there is no requirement to make explicit your rights for these types of resources.
+Note that there is no requirement to make explicit your rights for these types of resources, but by including them in this repository, you have assented to the terms and conditions of GitHub.
