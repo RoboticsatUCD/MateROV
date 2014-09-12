@@ -1,6 +1,8 @@
 /*
  * Command handler and servo interface.
  *
+ * Copyright 2014, Egan McComb
+ *
  * Command syntax is numeric ASCII payload for position in degrees,
  * followed by ASCII characters 'x' or 'y' to select the appropriate
  * servo.

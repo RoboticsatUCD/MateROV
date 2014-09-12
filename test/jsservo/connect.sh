@@ -1,3 +1,5 @@
+# Copyright 2014, Egan McComb
+
 # Setup Arduino TTY to correct baud and parity.
 stty -F /dev/ttyACM0 cs8 19200 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts
 

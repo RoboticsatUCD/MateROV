@@ -1,6 +1,8 @@
 /*
  * Joystick interface and commander.
  *
+ * Copyright 2014, Egan McComb
+ *
  * This code was adapted from GPL licensed:
  *
  * > jstest.c  Version 1.2

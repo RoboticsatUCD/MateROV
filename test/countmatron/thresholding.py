@@ -1,3 +1,5 @@
+# Copyright 2014, Egan McComb
+
 import numpy as np
 import scipy as sp
 import matplotlib.pyplot as plt
